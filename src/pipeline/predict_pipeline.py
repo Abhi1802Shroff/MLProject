@@ -21,7 +21,7 @@ class PredictPipeline:
             return predictions
         
         except Exception as e:
-            raise CustomData(e,sys)
+            raise CustomException(e,sys)
 
 
 class CustomData:
@@ -57,4 +57,4 @@ class CustomData:
             return pd.DataFrame(custom_data_input_dict)
         
         except Exception as e:
-            raise CustomData(e,sys)
+            raise CustomException(e,sys)
