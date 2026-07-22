@@ -39,7 +39,13 @@ def predict_datapoint():
         
         return render_template('home.html',results=results[0])
     
-
+@app.route("/test")
+def test():
+    try:
+        pipeline = PredictPipeline()
+        return "PredictPipeline created successfully"
+    except Exception as e:
+        return str(e)
 
 if __name__=="__main__":
     app.run(host="0.0.0.0")
