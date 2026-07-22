@@ -34,18 +34,15 @@ def predict_datapoint():
         pred_df=data.get_data_as_data_frame()
         print(pred_df)
         
-        predict_pipeline=PredictPipeline()
-        results=predict_pipeline.predict(pred_df)
-        
-        return render_template('home.html',results=results[0])
+        try:
+            predict_pipeline = PredictPipeline()
+            results = predict_pipeline.predict(pred_df)
+            return render_template('home.html', results=results[0])
+
+        except Exception as e:
+            import traceback
+            return f"<pre>{traceback.format_exc()}</pre>"
     
-@app.route("/test")
-def test():
-    try:
-        pipeline = PredictPipeline()
-        return "PredictPipeline created successfully"
-    except Exception as e:
-        return str(e)
 
 if __name__=="__main__":
     app.run(host="0.0.0.0")
