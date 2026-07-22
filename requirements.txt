@@ -1,9 +1,9 @@
-Flask==3.1.2
-gunicorn==23.0.0
-pandas==2.2.3
-numpy==2.0.2
-scikit-learn==1.6.1
-catboost==1.2.8
+Flask
+gunicorn
+pandas
+numpy
+scikit-learn
+catboost==1.2.10
 xgboost==2.1.4
-dill==0.3.9
+dill
 # -e .
